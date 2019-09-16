@@ -28,6 +28,10 @@ Proyecto de aplicacion web alojada en la nube (AWS) con atributos de seguridad, 
 ### Rendimiento
 
 ### Seguridad
+- la base de datos no debe poder accederse por los usuarios y debe estar restringida
+- los respaldos de la aplicación tienen que hacer cada 24 horas bajo el AMI principal
+- la clave de instancia pem debe ser modificada cada semana para evitar intentos de acceso
+- las instancias tienen que estar respaldadas bajo un auto scaling group para evitar fallos masivos 
 
 
 ## Rediseño de la aplicación del Proyecto 1 (aspectos que mejoraron del proyecto original)
