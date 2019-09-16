@@ -26,12 +26,15 @@ Proyecto de aplicacion web alojada en la nube (AWS) con atributos de seguridad, 
 - La probabilidad de falla del Sistema no podrá ser mayor a 0,005.
 
 ### Rendimiento
+- El sistema no debe superar los 100 dolares en gastos al mes
+- El sistema no debe superar el 95% del uso de recursos
+- Las instancias tienen que estar respaldadas bajo un auto scaling group para evitar fallos masivos 
 
 ### Seguridad
-- la base de datos no debe poder accederse por los usuarios y debe estar restringida
-- los respaldos de la aplicación tienen que hacer cada 24 horas bajo el AMI principal
-- la clave de instancia pem debe ser modificada cada semana para evitar intentos de acceso
-- las instancias tienen que estar respaldadas bajo un auto scaling group para evitar fallos masivos 
+- La base de datos no debe poder accederse por los usuarios y debe estar restringida
+- Los respaldos de la aplicación tienen que hacer cada 24 horas bajo el AMI principal
+- La clave de instancia pem debe ser modificada cada semana para evitar intentos de acceso
+- Las instancias tienen que estar respaldadas bajo un auto scaling group para evitar fallos masivos 
 
 
 ## Rediseño de la aplicación del Proyecto 1 (aspectos que mejoraron del proyecto original)
@@ -108,6 +111,7 @@ SEGURIDAD
 
 RENDIMIENTO
 
+- Se hizo uso de herramientas para visualizar anomalias y alertar sobre cambios en el volumen de peticiones al sistema, ademas de otras tecnicas para que el sistema pubiera incrementar sus recursos y decrementarlos segun los iba necesitando. 
 
 ### d. Decisiones de diseño
 
@@ -133,5 +137,7 @@ SEGURIDAD
 - IAM para asignación de permisos y roles
 
 RENDIMIENTO
-
+- CloudWatch para monitoreo y control de 
+- AMI tipo HVM en vez de PV
+- Grupos de Auto-Escalado para aprovechar al maximo los recursos
 
