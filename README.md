@@ -105,10 +105,9 @@ Principalmente se decidió por el lado de seguridad usar herramientas de monitor
 ### d. Decisiones de diseño 
 DISPONIBILIDAD, RENDIMIENTO Y SEGURIDAD
 
+![aws_regions](https://user-images.githubusercontent.com/12629380/64936122-0966eb80-d81a-11e9-90b6-98aced84a838.png)
+![VPCaws](https://user-images.githubusercontent.com/12629380/64936128-108df980-d81a-11e9-89e2-32948ce04792.png)
 
-https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/images/aws_regions.png
-
-https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/images/tutorial_as_elb_architecture.png
 
 
 
