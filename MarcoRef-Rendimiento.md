@@ -8,6 +8,7 @@ https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/virtualization_types.h
 https://cloudacademy.com/blog/aws-ami-hvm-vs-pv-paravirtual-amazon/
 - Uso de Amazon CloudWatch para la gestion y visualización del uso de los recursos como un dashboard de administracion.Que ademas permite crear alarmas del comportamiento de otras herramientas como AutoScaling Group asi permitirá definir funciones para activar esta herramienta o para detener instancias en caso de que se quiera definir un máximo de recursos a gasta.
 Finalmente con esta herramienta se pueden identificar comportamientos anómalos en las instancias y alertar al administrador.
+![CloudWatch](https://user-images.githubusercontent.com/44033716/64935704-4336f280-d818-11e9-88e1-1626eb02c17e.JPG)
 
 
 - Uso de AWS Auto Scaling Group para escalado automático de recursos.
