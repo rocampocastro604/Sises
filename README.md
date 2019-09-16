@@ -37,8 +37,8 @@ Proyecto de aplicacion web alojada en la nube (AWS) con atributos de seguridad, 
 | Se tenía un VPC por default que no tenía las especificaciones para hacer privada la red hacia las instancias | VPC(Virtual Private Cloud),  creado con especificaciones para asignar dentro de la misma VPC diferentes instancias con la misma aplicación                                                                                                         |
 | Debido a que solo existía una sola instancia, no era necesario tener un balanceador de carga                 | Se implementó un balanceador de cargas para distribuir las solicitudes que llegan a los servidores entre las dos instancias creadas                                                                                                                |
 
-SEGURIDAD
-
+### SEGURIDAD
+                                                                                                    |
 ### Antes
 
 Subnets públicas que referencian la primer instancia
@@ -59,21 +59,6 @@ AWS shield, esta función permite protección contra ataques DDos, identifica el
 
 La clave pem de las instancias es actualizada cada semana para evitar ingresos no deseados dentro de las instancias que puedan manipular y corromper datos.
 
-
-### Antes
-Solo estaba funcionando una sola instancia en una sola región
-
-Se crearon dos instancias en dos regiones distintas, para así tener dos ‘zonas de disponibilidad’ distintas. Por si ocurre algún problema en dicha región, estará disponible la otra región, por lo tanto, la aplicación seguirá en funcionamiento
-
-Se tenía un VPC por default que no tenía las especificaciones para hacer privada la red hacia las instancias
-VPC(Virtual Private Cloud), creado con especificaciones para asignar dentro de la misma VPC diferentes instancias con la misma aplicación
-
-### Ahora
-Las bases de datos privadas respectivamente
-
-Debido a que solo existía una sola instancia, no era necesario tener un balanceador de carga
-
-Se implementó un balanceador de cargas para distribuir las solicitudes que llegan a los servidores entre las dos instancias creadas
 
 ## Diseño para la escalabilidad (disponibilidad, rendimiento y seguridad)
 
