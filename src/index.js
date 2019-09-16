@@ -2,9 +2,9 @@ const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
 
-const { mongoose } = require('./database')
+//const { mongoose } = require('./database')
 
-/*
+
 const config = require('./database')
 const mongoose = require ('mongoose')
 
@@ -13,7 +13,7 @@ var db = mongoose.connection
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db)
 })
-*/
+
 
 const app = express()
 

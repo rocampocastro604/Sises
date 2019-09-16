@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+/*const mongoose = require('mongoose')
 
 const URI = 'mongodb+srv://danidehs:daniel1234@sises-0xulf.mongodb.net/test?retryWrites=true&w=majority'
 
@@ -8,7 +8,9 @@ mongoose.connect(URI, { useNewUrlParser: true })
 
 module.exports = mongoose;
 
-/*
+*/
+
+
 //Conexion bases de datos
 
 var path = require('path'),
@@ -20,13 +22,11 @@ var config = {
     baseUrl: "/",
     root: rootPath,
     app: {
-      name: 'proyecto1-telematica'
+      name: 'Sises'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb+srv://danidehs:tbyPCY42@sises-0xulf.mongodb.net/test?retryWrites=true&w=majority'
+    db: 'mongodb://mongo-server/Sises'
   },
 };
 
 module.exports = config[env];
-
-*/
