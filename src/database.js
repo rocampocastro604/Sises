@@ -1,15 +1,14 @@
-/*const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-const URI = 'mongodb://localhost/proyecto1-telematica-test'
+const URI = 'mongodb+srv://danidehs:daniel1234@sises-0xulf.mongodb.net/test?retryWrites=true&w=majority'
 
-mongoose.connect(URI)
+mongoose.connect(URI, { useNewUrlParser: true })
     .then(db => console.log('DB is connected'))
     .catch(err => console.error(err))
 
-module.exports = mongoose 
+module.exports = mongoose;
 
-*/
-
+/*
 //Conexion bases de datos
 
 var path = require('path'),
@@ -24,9 +23,10 @@ var config = {
       name: 'proyecto1-telematica'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://mongo-server/proyecto1-telematica-test'
+    db: 'mongodb+srv://danidehs:tbyPCY42@sises-0xulf.mongodb.net/test?retryWrites=true&w=majority'
   },
 };
 
 module.exports = config[env];
 
+*/
