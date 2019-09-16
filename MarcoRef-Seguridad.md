@@ -4,30 +4,8 @@ La seguridad en el sistema se implementó por medio de herramientas de aws, much
 Seguridad en la APLICACIÓN
 seguridad por la aplicación se iba a lograr implementando el ssl de la página el cual se logró por aws certification manager pero que en aws educate no permitía usar, y por docker el ssl no se adhería al url asignado, por otro lado el cifrado de los datos sensibles no es necesario debido al manejo de instancias en aws con claves pem, estos datos no son accesibles mientras que la base de datos esté en una subnet privada.
 
-Mejores Prácticas
-
-Using Proven technologies - Usar tecnologías Probadas:
-Usar tecnologías probadas y herramientas certificadas para monitoreo 
-
-Conocer las responsabilidades:
-Conocer el rol de cada usuario dentro de la aplicación y asignarlo en aws, entre ellos desarrolladores con permisos de modificación, admin, y usuarios que interactúan con al app
-
-Selección de técnicas
-
-Principalmente se decidió por el lado de seguridad usar herramientas de monitoreo que permitiera conocer los cambios que hacen los usuarios y además el tránsito de peticiones que tenia la página, además de respaldar las operaciones
-
-Decisiones de diseño
-Mismas que están en Disponibilidad
-
-
-Definición de herramientas a utilizar 
-
-Cloudtrail para monitoreo de peticiones y uso de las instancias de los usuario que acceden a la consola
-
-AMI para creación de respaldo de la instancia principal con la página web
-
-Grupos de seguridad para control de las ips estáticas y protección de las instancias
-
-IAM para asignación de permisos y roles
-
+https://console.aws.amazon.com/cloudtrail/home?region=us-east-1
+https://aws.amazon.com/es/macie/
+https://console.aws.amazon.com/iam/home?region=us-east-1
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:
 
