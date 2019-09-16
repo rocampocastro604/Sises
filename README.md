@@ -52,7 +52,11 @@ Proyecto de aplicacion web alojada en la nube (AWS) con atributos de seguridad, 
 
 ### RENDIMIENTO
 
-
+| Antes 	| Ahora 	|
+|:----------------------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+| Ya se usaba la misma AMI de tipo HVM 	| Se usó una AMI de tipo HVM en la Instancia EC2 de Amazon.  Nota: Con la cuenta paga se experimento con una instancia tipo M4 y M5 para ver diferencias. 	|
+|  	| Uso de Amazon CloudWatch para la gestión y visualización del uso de los recursos como un dashboard de administración. 	|
+| No se contaba con nada de elasticidad en el sistema. 	| Uso de AWS Auto Scaling Group para escalado automático de recursos. 	|
 
 
 ## Diseño para la escalabilidad (disponibilidad, rendimiento y seguridad)
@@ -64,6 +68,10 @@ Patrón de Escalabilidad
 -	Patrón Workload/Demand
 -	Competing Consumers Patterns
 - Data Push and Data Pull model
+
+### Seguridad en la APLICACIÓN
+Seguridad por la aplicación se iba a lograr implementando el ssl de la página el cual se logró por aws certification manager pero que en aws educate no permitía usar, y por docker el ssl no se adhería al url asignado, por otro lado el cifrado de los datos sensibles no es necesario debido al manejo de instancias en aws con claves pem, estos datos no son accesibles mientras que la base de datos esté en una subnet privada.
+
 
 ### b. Qué patrones de arquitectura específicos (patrones de escalabilidad y buenas prácticas) se utilizarán en el SISTEMA para apoyar esta escalabilidad
 
@@ -84,22 +92,17 @@ SEGURIDAD
 
 ### Seguridad en el SISTEMA
 La seguridad en el sistema se implementó por medio de herramientas de aws, muchas de estas funcionaron con cuentas no vinculadas a educate, se probó con una cuenta nueva no educate y se logró implementar herramientas como Security HUB, AWS shield y Macie, que implementan técnicas de seguridad para protección de datos sensibles, DDos y grupos de seguridad, aunque en la AWS educate no disponíamos de las mismas herramientas para mejorar la seguridad implementamos otros métodos que estaban a nuestro alcance utilizando mejores prácticas, una de estas técnicas fue implementar un esquema de respaldos de la aplicación duplicando el AMI de la instancia principal cada 24 horas, esto se lograba con aumentando el máximo de grupos de escalabilidad que a su vez aumentaba los respaldos de las instancias funcionales, igualmente se hacia un cambio de la clave pem de acceso a la instancia principal cada semana enviando un alerta programada por reportes.
-
-### Seguridad en la APLICACIÓN
-seguridad por la aplicación se iba a lograr implementando el ssl de la página el cual se logró por aws certification manager pero que en aws educate no permitía usar, y por docker el ssl no se adhería al url asignado, por otro lado el cifrado de los datos sensibles no es necesario debido al manejo de instancias en aws con claves pem, estos datos no son accesibles mientras que la base de datos esté en una subnet privada.
-
 	
 	
 ### c. Selección de tácticas 
 
 DISPONIBILIDAD
 
-Se tomó en cuenta crear una nueva instancia en otra región como una imagen de la instancia que contenía la aplicación, para que fuera  
-una copia exacta de ella, y así tener dos instancias iguales corriendo la app en regiones diferentes, siendo cada una asignadas dentro de un VPC (Virtual Private Cloud), en el que un balanceador de carga distribuya las solicitudes entre ambas instancias. 
+- Se tomó en cuenta crear una nueva instancia en otra región como una imagen de la instancia que contenía la aplicación, para que fuera una copia exacta de ella, y así tener dos instancias iguales corriendo la app en regiones diferentes, siendo cada una asignadas dentro de un VPC (Virtual Private Cloud), en el que un balanceador de carga distribuya las solicitudes entre ambas instancias. 
 
 SEGURIDAD
 
-Principalmente se decidió por el lado de seguridad usar herramientas de monitoreo que permitiera conocer los cambios que hacen los usuarios y además el tránsito de peticiones que tenia la página, además de respaldar las operaciones
+- Principalmente se decidió por el lado de seguridad usar herramientas de monitoreo que permitiera conocer los cambios que hacen los usuarios y además el tránsito de peticiones que tenia la página, además de respaldar las operaciones
 
 
 ### d. Decisiones de diseño 
