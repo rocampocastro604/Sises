@@ -39,25 +39,20 @@ Proyecto de aplicacion web alojada en la nube (AWS) con atributos de seguridad, 
 
 ### SEGURIDAD
                                                                                                     |
-### Antes
+| Antes 	| Ahora 	|
+|:----------------------------------------------------:	|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|  	| VPC( red privada virtual),  creado igualmente para asignar dentro de la misma las instancias para el balanceador. 	|
+| Subnets públicas que referencian la primer instancia 	| Subnets públicas y privadas para referenciar las múltiples instancia y las bases de datos privadas respectivamente 	|
+|  	| La página web y los datos son respaldados cada 24 horas en la segunda instancia 	|
+|  	| Cloudtrail para supervisar los estados de la instancia e informar de cambios y de manejo del cpu 	|
+|  	| Roles de participación, para manejo de los diferentes desarrolladores que interactúan con las instancias se crean IAM roles que se les asignan permisos de modificación,  desafortunadamente debido al tipo de cuenta de estudiante esta función no está habilitada. 	|
+|  	| AWS shield, esta función permite protección contra ataques DDos, identifica el ataque y toma acciones creando listas de espera o bloqueando el acceso,  desafortunadamente debido al tipo de cuenta de estudiante esta función no está habilitada. 	|
+|  	| La clave pem de las instancias es actualizada cada semana para evitar ingresos no deseados dentro de las instancias que puedan manipular y corromper datos. 	|
 
-Subnets públicas que referencian la primer instancia
 
-### Ahora
+### RENDIMIENTO
 
-VPC( red privada virtual), creado igualmente para asignar dentro de la misma las instancias para el balanceador. 
 
-Subnets públicas y privadas para referenciar las múltiples instancia y las bases de datos privadas respectivamente
-
-La página web y los datos son respaldados cada 24 horas en la segunda instancia
-
-Cloudtrail para supervisar los estados de la instancia e informar de cambios y de manejo del cpu
-
-Roles de participación, para manejo de los diferentes desarrolladores que interactúan con las instancias se crean IAM roles que se les asignan permisos de modificación, desafortunadamente debido al tipo de cuenta de estudiante esta función no está habilitada.
-
-AWS shield, esta función permite protección contra ataques DDos, identifica el ataque y toma acciones creando listas de espera o bloqueando el acceso, desafortunadamente debido al tipo de cuenta de estudiante esta función no está habilitada.
-
-La clave pem de las instancias es actualizada cada semana para evitar ingresos no deseados dentro de las instancias que puedan manipular y corromper datos.
 
 
 ## Diseño para la escalabilidad (disponibilidad, rendimiento y seguridad)
