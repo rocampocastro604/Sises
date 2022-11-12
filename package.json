@@ -29,7 +29,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.12"
   },
   "engines": {
     "node": "^7.7.4"
